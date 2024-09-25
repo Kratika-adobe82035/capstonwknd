@@ -1,4 +1,4 @@
-import { getMetadata } from '../../scripts/aem.js';
+import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
@@ -72,6 +72,12 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
+  // adding active nav on click of hamburger
+  if (expanded || isDesktop.matches) {
+    document.body.classList.remove('nav-active');
+  } else {
+    document.body.classList.add('nav-active');
+  }
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
@@ -108,10 +114,21 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  const placeholders = await fetchPlaceholders();
+  const { signUp, link } = placeholders;
+
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
+
+  // register
+  const topHeader = document.createElement('div');
+  topHeader.classList.add('top-header');
+  const register = document.createElement('a');
+  register.href = link;
+  register.textContent = signUp;
+  topHeader.appendChild(register);
 
   // decorate nav DOM
   block.textContent = '';
@@ -133,8 +150,16 @@ export default async function decorate(block) {
   }
 
   const navSections = nav.querySelector('.nav-sections');
+  const currentUrl = window.location.pathname;
+
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+      const anchor = navSection.querySelector('a');
+      if (anchor && anchor.getAttribute('href') === currentUrl) {
+        // Add active class if the current URL matches the anchor's href
+        anchor.classList.add('active');
+      }
+
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
@@ -152,15 +177,32 @@ export default async function decorate(block) {
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
       <span class="nav-hamburger-icon"></span>
     </button>`;
-  hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
+  hamburger.addEventListener('click', () => {
+    toggleMenu(nav, navSections);
+  });
   nav.prepend(hamburger);
-  nav.setAttribute('aria-expanded', 'false');
+  nav.setAttribute('aria-expanded', 'true');
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+  navWrapper.append(topHeader);
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // Add shadow on scroll
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      navWrapper.classList.add('scroll-shadow');
+      document.querySelector('main').classList.add('header-padding');
+    } else {
+      navWrapper.classList.remove('scroll-shadow');
+      document.querySelector('main').classList.remove('header-padding');
+    }
+  }
+  window.addEventListener('scroll', handleScroll);
+  // Initial check in case the page is already scrolled
+  handleScroll();
 }

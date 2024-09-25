@@ -1,0 +1,28 @@
+.search {
+    display: flex;
+    background: #ebebeb8a ;
+    padding: 8px;
+    align-items: center;
+    border: 1px solid #fff;
+}
+
+.search:focus-within {
+    background: #fff;
+    border-color:#5f5e5e;
+}
+
+.search .input-field {
+    border: 0;
+    background: transparent;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.search .input-field::placeholder {
+    text-transform: uppercase;
+}
+ 
+.search .input-field:focus-visible  {
+    border: 0;
+    outline: none;
+}
