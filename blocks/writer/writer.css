@@ -1,0 +1,46 @@
+.writer>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+    grid-gap: 24px;
+  }
+  
+  .writer>ul>li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .writer .writer-body {
+    margin: 16px;
+    text-align: center;
+  }
+  
+  .writer .writer-image {
+    line-height: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+  }
+  
+  .writer>ul>li img {
+    width: 100%;
+    aspect-ratio: 3 / 3;
+    object-fit: cover;
+  }
+  
+  .writer .writer-body p {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .writer .writer-body p a {
+    background: var(--text-color);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
