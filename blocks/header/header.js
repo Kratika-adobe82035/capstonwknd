@@ -126,8 +126,8 @@ export default async function decorate(block) {
   const topHeader = document.createElement('div');
   topHeader.classList.add('top-header');
   const register = document.createElement('a');
-  register.href = link;
-  register.textContent = signUp;
+  register.href = 'https://main--capstonwknd--kratika-adobe82035.aem.page/forms/signup';
+  register.textContent = "signUp";
   topHeader.appendChild(register);
 
   // decorate nav DOM

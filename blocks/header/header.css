@@ -46,7 +46,7 @@ header nav p {
 
 .top-header{
   background: var(--text-color);
-  padding: 2px 40px;
+  padding: 4px 40px;
   display: flex;
   justify-content: flex-end;
 }
