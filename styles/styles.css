@@ -347,3 +347,11 @@ main >.thank-you {
     --nav-height: 46px;
   }
 }
+
+.section.contributor.registraionpage h2{
+  color: #fff;
+  margin-top: 0;
+}
+.section.contributor.registraionpage h2:after{
+  margin: 10px 0 30px;
+}

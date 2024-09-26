@@ -168,3 +168,15 @@
   .form .toggle-wrapper input:checked + .slider::before {
     transform: translateX(24px);
   }
+
+
+
+  .registrationform label{
+    color: #fff;
+    display: none;
+  }
+  .registrationform #form-interests{
+    height: 100px;
+  }
+
+  
