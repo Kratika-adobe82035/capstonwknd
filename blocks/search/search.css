@@ -3,7 +3,7 @@
   background: #ebebeb8a ;
   padding: 8px;
   align-items: center;
-  border: 1px solid #5f5e5e;
+  border: 1px solid transparent;
   max-width: 166px;
 }
 
