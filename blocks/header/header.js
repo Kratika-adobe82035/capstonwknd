@@ -125,6 +125,8 @@ export default async function decorate(block) {
   // register
   const topHeader = document.createElement('div');
   topHeader.classList.add('top-header');
+  const topHeaderinner = document.createElement('div');
+  topHeaderinner.classList.add('top-headerinner');
   const register = document.createElement('a');
   register.href = 'https://main--capstonwknd--kratika-adobe82035.aem.live/modals/modalregistraion';
   register.textContent = "SIGN IN";
