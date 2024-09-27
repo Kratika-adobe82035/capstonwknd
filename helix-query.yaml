@@ -8,7 +8,7 @@ indices:
     exclude:
       - '**/forms/**'
     # target: /query-index
-    target: magazines/magazine-index
+    target: magazine/magazine-index
     # target: SharePoint URL of your query index, e.g. <shared-folder-url>/query-index.xlsx
     properties:
       author:
