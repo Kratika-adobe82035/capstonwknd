@@ -75,7 +75,7 @@ indices:
       
   magazine:
     include:
-      - '/magazine/**'
+      - /magazine/**
     exclude:
       - '/je/en/blogs/'
       - '/drafts/**'
