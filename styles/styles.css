@@ -24,6 +24,10 @@
   --link-hover-color: #ffea00;
   --footer-bg-color: #202020;
   --footer-text-color: #ebebeb;
+  --opecity-color-42: #00000042;
+  --background-color-light: #ebebeb;
+  --brand-primary-color: #ffea00;
+  --background-color-b: #000; 
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
