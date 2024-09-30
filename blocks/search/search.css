@@ -1,6 +1,6 @@
 .search {
   display: flex;
-  background: #ebebeb8a ;
+  background: #ebebeb8a;
   padding: 8px;
   align-items: center;
   border: 1px solid transparent;
@@ -9,7 +9,7 @@
 
 .search:focus-within {
   background: #fff;
-  border-color:#5f5e5e;
+  border-color: #5f5e5e;
 }
 
 .search .search-input {
@@ -23,10 +23,11 @@
   text-transform: uppercase;
 }
 
-.search .search-input:focus-visible  {
+.search .search-input:focus-visible {
   border: 0;
   outline: none;
 }
-.search-box{
+
+.search-box {
   display: flex;
 }

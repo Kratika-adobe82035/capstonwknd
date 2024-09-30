@@ -14,7 +14,7 @@
   box-sizing: border-box;
 } */
 
- :root {
+:root {
   /* colors */
   --background-color: white;
   --light-color: #f8f8f8;
@@ -27,10 +27,9 @@
   --opecity-color-42: #00000042;
   --background-color-light: #ebebeb;
   --brand-primary-color: #ffea00;
-  --background-color-b: #000; 
+  --background-color-b: #000;
   --light-grey-color: #ebebeb;
 
- 
   /* fonts */
   --heading-font-family: "Asar", georgia, "Times New Roman", times, serif;
   --body-font-family: "Source Sans Pro", "Helvetica Neue", helvetica, arial,
@@ -57,24 +56,19 @@
   /* nav height */
   --nav-height: 64px;
 
-  /* footer css */
-
-  --footer-bg-color: #202020;
-  --footer-text-color: #ebebeb;
 }
-
 
 /* fallback fonts */
 @font-face {
- font-family: roboto-condensed-fallback;
- size-adjust: 88.82%;
- src: local('Arial');
+  font-family: roboto-condensed-fallback;
+  size-adjust: 88.82%;
+  src: local("Arial");
 }
 
 @font-face {
- font-family: roboto-fallback;
- size-adjust: 99.529%;
- src: local('Arial');
+  font-family: roboto-fallback;
+  size-adjust: 99.529%;
+  src: local("Arial");
 }
 
 @media (width >=900px) {
@@ -186,7 +180,6 @@ pre {
 
 main {
   padding: 110px 0 0;
-  
 }
 
 main.header-padding {
@@ -228,7 +221,6 @@ button {
   padding: 1em 2.4em;
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
@@ -313,10 +305,10 @@ main>.section:first-of-type {
   main.header-padding {
     padding: 96px 0 0;
   }
-  
+
   main>.section>div {
     padding: 0 32px;
-  } 
+  }
 }
 
 .magazine .columns-img-col {
@@ -350,36 +342,37 @@ main .section.highlight {
   padding: 40px 0;
 }
 
-main >.thank-you {
+main>.thank-you {
   background: #efefef;
   padding: 40px;
   margin: 0;
 }
 
-
-@media (width <= 1024px) {
-  :root{
+@media (width <=1024px) {
+  :root {
     --nav-height: 80px;
   }
 }
 
-
-@media (width <= 600px) {
-  :root{
+@media (width <=600px) {
+  :root {
     --nav-height: 46px;
   }
-  main{
+
+  main {
     padding: 12px 0;
   }
 }
 
-.section.contributor.registraionpage h2{
+.section.contributor.registraionpage h2 {
   color: #fff;
   margin-top: 0;
 }
-.section.contributor.registraionpage h2:after{
+
+.section.contributor.registraionpage h2::after {
   margin: 10px 0 30px;
 }
-h2#camping-in-western-australia{
+
+h2#camping-in-western-australia {
   font-weight: 500;
 }
