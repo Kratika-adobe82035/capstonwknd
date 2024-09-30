@@ -57,7 +57,7 @@ export function returnLinkTarget(url) {
 // as the blocks are loaded in aysnchronously, we don't have a specific timing
 // that the all blocks are loaded -> cannot use a single observer to
 // observe all blocks, so use functions here in blocks instead
-// eslint-disable-next-line max-len
+
 const requireRevealWrapper = ['slide-reveal-up', 'slide-reveal-up-slow'];
 
 export function addRevealWrapperToAnimationTarget(element) {
@@ -68,7 +68,7 @@ export function addRevealWrapperToAnimationTarget(element) {
   revealWrapper.appendChild(element);
 }
 
-// eslint-disable-next-line max-len
+
 export function addAnimatedClassToElement(targetSelector, animatedClass, delayTime, targetSelectorWrapper) {
   const target = targetSelectorWrapper.querySelector(targetSelector);
   if (target) {
@@ -80,7 +80,7 @@ export function addAnimatedClassToElement(targetSelector, animatedClass, delayTi
   }
 }
 
-// eslint-disable-next-line max-len
+
 export function addAnimatedClassToMultipleElements(targetSelector, animatedClass, delayTime, targetSelectorWrapper, staggerTime) {
   const targets = targetSelectorWrapper.querySelectorAll(targetSelector);
   if (targets) {
@@ -110,7 +110,7 @@ export function addInviewObserverToTriggerElement(triggerElement) {
   observer.observe(triggerElement);
 }
 
-// eslint-disable-next-line max-len
+
 export function addInViewAnimationToSingleElement(targetElement, animatedClass, triggerElement, delayTime) {
   // if it's HTML element
   if (targetElement.nodeType === 1) {
@@ -135,7 +135,7 @@ export function addInViewAnimationToMultipleElements(animatedItems, triggerEleme
       addAnimatedClassToElement(el.selector, el.animatedClass, delayTime, triggerElement);
     }
     if (Object.prototype.hasOwnProperty.call(el, 'selectors')) {
-      // eslint-disable-next-line max-len
+
       addAnimatedClassToMultipleElements(el.selectors, el.animatedClass, el.staggerTime, triggerElement);
     }
   });
