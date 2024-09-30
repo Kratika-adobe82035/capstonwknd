@@ -68,14 +68,14 @@ function highlightTextElements(terms, elements) {
 export async function fetchData(source) {
   const response = await fetch(source);
   if (!response.ok) {
-    // eslint-disable-next-line no-console
+
     console.error('error loading API response', response);
     return null;
   }
 
   const json = await response.json();
   if (!json) {
-    // eslint-disable-next-line no-console
+
     console.error('empty API response', source);
     return null;
   }

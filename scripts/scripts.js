@@ -21,7 +21,7 @@ import {
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
-  // eslint-disable-next-line no-bitwise
+
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
     section.append(buildBlock('hero', { elems: [picture, h1] }));
@@ -49,7 +49,7 @@ function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
   } catch (error) {
-    // eslint-disable-next-line no-console
+
     console.error('Auto Blocking failed', error);
   }
 }
@@ -71,9 +71,9 @@ function autolinkModals(element) {
  * Decorates the main element.
  * @param {Element} main The main element
  */
-// eslint-disable-next-line import/prefer-default-export
+
 export function decorateMain(main) {
-  // hopefully forward compatible button decoration
+
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
@@ -112,8 +112,8 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-  autolinkModals(doc); 
-  
+  autolinkModals(doc);
+
   const main = doc.querySelector('main');
   await loadSections(main);
 
@@ -133,9 +133,9 @@ async function loadLazy(doc) {
  * without impacting the user experience.
  */
 function loadDelayed() {
-  // eslint-disable-next-line import/no-cycle
+
   window.setTimeout(() => import('./delayed.js'), 3000);
-  // load anything that can be postponed to the latest here
+
 }
 
 async function loadPage() {
