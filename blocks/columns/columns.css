@@ -86,7 +86,7 @@
 
   .columns > div > div:last-of-type h2 {
     margin-top: 0;
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 0;
   }
 
@@ -117,5 +117,21 @@
   .columns > div > div:last-of-type {
     padding-left: 2em;
     padding-right: 0.75em;
+  }
+}
+@media (width <= 600px) {
+
+  .columns > div > .columns-img-col picture {
+    max-width: 580px;
+    max-height: 540px;
+  }
+
+  .columns > div > div:last-of-type h2 {
+    font-size: 24px;
+  }
+
+  .columns > div > div:last-of-type {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
 }
