@@ -50,7 +50,8 @@
 }
 
 .articles-cards a:any-link {
-  color: var(--brand-primary-color);
+  color: var(--text-color);
+  font-size: 16px;
 }
 
 .articles-cards .articles-cards-card-body a:hover {

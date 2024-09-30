@@ -23,13 +23,21 @@
   line-height: 2.5;
 }
 
-p {
-  font-size: var(--heading-font-size-s);
-  font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", helvetica, arial, sans-serif);
+.cards-card-body p {
+  font-size: 14px;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
 .columns > div > .columns-img-col {
   order: 1;
+  max-width: 709px;
+  max-height: 509px;
+  box-sizing: border-box;
 }
 
 .columns > div > .columns-img-col picture {
@@ -45,7 +53,7 @@ p {
 }
 
 .columns > div > div:last-of-type > p {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 @media (width >= 900px) {
